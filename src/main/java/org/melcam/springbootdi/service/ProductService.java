@@ -15,7 +15,9 @@ public class ProductService {
             //calculamos un precio de impuesto a partir del precio multiplicado por impuesto
             Double priceImpuesto = p.getPrice() * 1.25d;
             //principio de inmutabilidad, para que no se incremente cada vez que se hace la peticion
-            Product newProduct=new Product(p.getId(),p.getName(),priceImpuesto.longValue());
+            //Product newProduct=new Product(p.getId(),p.getName(),priceImpuesto.longValue());
+            Product newProduct= (Product) p.clone();
+            newProduct.setPrice(priceImpuesto.longValue());
             return newProduct;
         }).collect(Collectors.toList());
     }
