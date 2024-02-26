@@ -18,7 +18,7 @@ public class ProductRepository {
         );
     }
 
-    List<Product> findAll() {
+    public List<Product> findAll() {
         return this.data;
     }
 
