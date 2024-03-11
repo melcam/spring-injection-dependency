@@ -2,13 +2,17 @@ package org.melcam.springbootdi.service;
 
 import org.melcam.springbootdi.model.Product;
 import org.melcam.springbootdi.repository.ProductRepositoryImpl;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
+@Component
 public class ProductServiceImpl implements ProductService {
 
-    ProductRepositoryImpl repository = new ProductRepositoryImpl();
+    @Autowired
+    private ProductRepositoryImpl repository;
 
 
     @Override

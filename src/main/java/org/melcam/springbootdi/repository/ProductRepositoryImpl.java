@@ -1,13 +1,15 @@
 package org.melcam.springbootdi.repository;
 
 import org.melcam.springbootdi.model.Product;
+import org.springframework.stereotype.Component;
 
 import java.util.Arrays;
 import java.util.List;
 
+@Component
 public class ProductRepositoryImpl implements ProductRepository {
 
-    private List<Product> data;
+    private final List<Product> data;
 
     public ProductRepositoryImpl() {
         this.data = Arrays.asList(
